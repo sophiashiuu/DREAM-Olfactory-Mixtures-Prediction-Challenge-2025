@@ -73,6 +73,20 @@ Task 1 was easier to model due to direct molecule-descriptor mapping while Task 
 
 Major challenge: missing features for some components, handled via zero imputation.
 
-## Future work:
+## 📌 Future work:
 Capture interactions between mixture components.
 Go beyond simple averaging for mixture representation.
+
+## 📝 License
+This project is for educational and event purposes at the University of Michigan- Ann Arbor (DREAM Olfactory Mixtures Prediction Challenge 2025).
+
+
+## 🙏 Acknowledgments
+Thanks to the dataset and research providers for support and guidance.
+
+1. Boldini, D., Ballabio, D., Consonni, V., Todeschini, R., Grisoni, F., & Sieber, S. A. (2024, March 25). Effectiveness of molecular fingerprints for exploring the chemical space of natural products. Journal of cheminformatics. https://pmc.ncbi.nlm.nih.gov/articles/PMC10964529/ 
+2. Megalakaki, O., Ballenghein, U., & Baccino, T. (2019, February 1). Effects of valence and emotional intensity on the comprehension and memorization of texts. Frontiers in psychology. https://pmc.ncbi.nlm.nih.gov/articles/PMC6367271/ 
+3. U.S. Department of Health and Human Services. (2025a, May 8). How the nose decodes complex odors. National Institutes of Health. https://www.nih.gov/news-events/nih-research-matters/how-nose-decodes-complex-odors 
+4. DREAM Olfactory Mixtures Prediction Challenge 2025 (syn64743570)
+
+

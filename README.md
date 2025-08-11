@@ -1,65 +1,66 @@
-# DREAM Olfactory Mixtures Prediction Challenge 2025
+# 🌸 DREAM Olfactory Mixtures Prediction Challenge 2025
+
 ## 📌 Background & Motivation
-Predicting human olfactory perception from chemical structure is a major challenge in computational neuroscience. While molecular descriptors capture structural information, translating this into accurate perceptual predictions remains difficult.
+Predicting human olfactory perception from chemical structure is a major challenge in computational neuroscience. While molecular descriptors capture structural information, translating these into accurate perceptual predictions remains difficult.
 
-Our goal was to:
+Our goals were to:  
+- **Predict perceptual ratings** for single molecules (**Task 1**) and mixtures (**Task 2**)  
+- **Use Random Forest Regression** for its balance of interpretability, robustness, and ability to handle high-dimensional molecular data  
+- **Integrate diverse molecular features** to improve generalization to unseen compounds and mixtures  
 
-Predict perceptual ratings for single molecules (Task 1) and mixtures (Task 2).
+| **Feature Source**            | **Description**                                   |
+|--------------------------------|---------------------------------------------------|
+| **Mordred descriptors**        | Physicochemical and structural molecular features |
+| **Morgan fingerprints**        | Circular substructure fingerprints                |
+| **OpenPOM perceptual vectors** | Human perceptual data projections                 |
 
-Use Random Forest Regression for its balance of interpretability, robustness, and ability to handle high-dimensional molecular data.
-
-Integrate diverse molecular features to improve generalization to unseen compounds and mixtures.
-
-Feature Sources:
-
-Mordred descriptors
-
-Morgan fingerprints
-
-OpenPOM perceptual vectors
+---
 
 ## 🛠 Methods
-Task 1: Single-Molecule Prediction
-* Data Integration:
-*   Merged TASK1_Stimulus_definition.csv with Mordred_Descriptors.csv on molecule.
-*   Combined with TASK1_training.csv on stimulus.
 
-* Feature Selection:
-*   Removed non-numeric and metadata columns (stimulus, molecule, dilution, etc.).
+### **Task 1 – Single-Molecule Prediction**  
+**📂 Data Integration**  
+- Merged `TASK1_Stimulus_definition.csv` with `Mordred_Descriptors.csv` on **molecule**  
+- Combined with `TASK1_training.csv` on **stimulus**  
 
-* Preprocessing:
-*   Replaced infinite values with NaN, missing values with 0.
-*   Scaled features with StandardScaler.
+**🔍 Feature Selection**  
+- Removed non-numeric and metadata columns (`stimulus`, `molecule`, `dilution`, etc.)  
 
-* Model:
-*   RandomForestRegressor wrapped in MultiOutputRegressor.
-*   Hyperparameters: n_estimators=100, random_state=42.
-*   Train-validation split: 80/20.
+**⚙ Preprocessing**  
+- Replaced infinite values with `NaN`, missing values with `0`  
+- Scaled features with `StandardScaler`  
 
-* Evaluation Metric: 
-*   Root Mean Squared Error (RMSE).
+**🤖 Model**  
+- `RandomForestRegressor` wrapped in `MultiOutputRegressor`  
+- Hyperparameters: `n_estimators=100`, `random_state=42`  
+- Train-validation split: **80/20**  
 
-Task 2: Mixture Prediction
-* Data Integration:
-*   Merged Mordred_Descriptors.csv and Morgan_fingerprints.csv on molecule.
-*   Added SMILES strings and OpenPOM_Dream_RATA.csv perceptual data.
+**📏 Evaluation Metric**  
+- Root Mean Squared Error (**RMSE**)  
 
-* Component Aggregation:
-*   Linked component-level features to stimuli.
-*   Averaged numeric features per mixture.
-*   Missing values → zeros.
+---
 
-* Preprocessing:
-*   Scaled features using training set statistics.
+### **Task 2 – Mixture Prediction**  
+**📂 Data Integration**  
+- Merged `Mordred_Descriptors.csv` and `Morgan_fingerprints.csv` on **molecule**  
+- Added SMILES strings and `OpenPOM_Dream_RATA.csv` perceptual data  
 
-* Model:
-*   Same setup as Task 1.
-*   Train-validation split: 90/10.
+**🧩 Component Aggregation**  
+- Linked component-level features to stimuli  
+- Averaged numeric features per mixture  
+- Missing values → zeros  
 
-* Evaluation Metrics:
-*   RMSE
-*   Mean Cosine Distance
-*   Mean Pearson Correlation
+**⚙ Preprocessing**  
+- Scaled features using training set statistics  
+
+**🤖 Model**  
+- Same setup as Task 1  
+- Train-validation split: **90/10**  
+
+**📏 Evaluation Metrics**  
+- RMSE  
+- Mean Cosine Distance  
+- Mean Pearson Correlation  
 
 ## 📊 Tools & Libraries
 * Python 3.11

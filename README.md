@@ -75,8 +75,8 @@ Task 1 was easier to model due to direct molecule-descriptor mapping while Task 
 Major challenge: missing features for some components, handled via zero imputation.
 
 ## 📌 Future work:
-Capture interactions between mixture components.
-Go beyond simple averaging for mixture representation.
+Capture interactions between mixture components. 
+Go beyond simple averaging for mixture representation. 
 
 ## 📝 License
 This project is for educational and event purposes at the University of Michigan- Ann Arbor (DREAM Olfactory Mixtures Prediction Challenge 2025).
